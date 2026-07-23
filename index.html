@@ -13,9 +13,11 @@
 
 </head>
 
+
 <body>
 
     <div class="container">
+
 
         <header>
 
@@ -23,50 +25,114 @@
 
         </header>
 
+
+
         <section class="summary">
 
-            <h2>이번 달</h2>
+
+            <div class="month-control">
+
+                <button id="prevMonth">
+                    ◀
+                </button>
+
+
+                <h2 id="currentMonth">
+                    2026년 7월
+                </h2>
+
+
+                <button id="nextMonth">
+                    ▶
+                </button>
+
+            </div>
+
+
 
             <div class="summary-row">
+
                 <span>수입</span>
-                <span id="income">0원</span>
+
+                <span id="income">
+                    0원
+                </span>
+
             </div>
 
+
+
             <div class="summary-row">
+
                 <span>지출</span>
-                <span id="expense">0원</span>
+
+                <span id="expense">
+                    0원
+                </span>
+
             </div>
+
+
 
             <hr>
 
+
+
             <div class="summary-row total">
+
                 <span>잔액</span>
-                <span id="balance">0원</span>
+
+                <span id="balance">
+                    0원
+                </span>
+
             </div>
+
 
         </section>
 
+
+
+
         <button id="addBtn">
+
             + 내역 추가
+
         </button>
+
+
+
 
         <section class="records">
 
-            <h2>최근 내역</h2>
+
+            <h2>
+                내역
+            </h2>
+
 
             <ul id="recordList">
 
                 <li class="empty">
+
                     아직 등록된 내역이 없습니다.
+
                 </li>
 
             </ul>
 
+
         </section>
+
+
 
     </div>
 
+
+
+
     <script type="module" src="index.js"></script>
+
 
 </body>
 
