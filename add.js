@@ -32,9 +32,8 @@ const expenseCategories = [
 ];
 
 const incomeCategories = [
-    "💼 월급",
     "🎁 용돈",
-    "💸 환급",
+    "💼 월급",    
     "💵 기타"
 ];
 
