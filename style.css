@@ -5,9 +5,9 @@
 }
 
 body{
-    background:#f5f5f5;
+    background:#FFF6FA;
     font-family:"맑은 고딕",sans-serif;
-    color:#333;
+    color:#444;
 }
 
 .container{
@@ -18,24 +18,54 @@ body{
 
 header{
     text-align:center;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 header h1{
     font-size:32px;
+    color:#E573A7;
+    font-weight:bold;
 }
 
 .summary{
-    background:#fff;
-    border-radius:12px;
-    padding:20px;
+    background:#FFFFFF;
+    border-radius:18px;
+    padding:22px;
     margin-bottom:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-.summary h2{
-    font-size:20px;
+.month-control{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
     margin-bottom:20px;
+}
+
+.month-control h2{
+    font-size:22px;
+    color:#D85A91;
+    white-space:nowrap;
+}
+
+.month-control button{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#FFE4EE;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:17px;
+    transition:.2s;
+}
+
+.month-control button:hover{
+    background:#FFD1E2;
+    transform:scale(1.05);
 }
 
 .summary-row{
@@ -49,40 +79,43 @@ header h1{
 .summary hr{
     margin:15px 0;
     border:none;
-    border-top:1px solid #ddd;
+    border-top:1px solid #F5D5E1;
 }
 
 .total{
     font-size:22px;
     font-weight:bold;
+    color:#E573A7;
 }
 
 #addBtn{
     width:100%;
     padding:16px;
     border:none;
-    border-radius:12px;
-    background:#2e7d32;
+    border-radius:14px;
+    background:#F48FB1;
     color:#fff;
     font-size:18px;
+    font-weight:bold;
     cursor:pointer;
     margin-bottom:20px;
     transition:.2s;
 }
 
 #addBtn:hover{
-    background:#256428;
+    background:#EC6F9A;
 }
 
 .records{
-    background:#fff;
-    border-radius:12px;
+    background:#FFFFFF;
+    border-radius:18px;
     padding:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .records h2{
     margin-bottom:20px;
+    color:#D85A91;
 }
 
 #recordList{
@@ -90,8 +123,11 @@ header h1{
 }
 
 #recordList li{
-    padding:14px 0;
-    border-bottom:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 5px;
+    border-bottom:1px solid #F6DCE6;
 }
 
 #recordList li:last-child{
@@ -100,34 +136,67 @@ header h1{
 
 .empty{
     text-align:center;
-    color:#888;
+    color:#999;
     padding:30px 0 !important;
 }
 
-@media (max-width:600px){
-
-    .container{
-        margin:15px;
-        padding:0;
-    }
-
-    header h1{
-        font-size:28px;
-    }
-
-    .summary-row{
-        font-size:17px;
-    }
-
-    .total{
-        font-size:20px;
-    }
-
-    #addBtn{
-        font-size:17px;
-    }
-
+.record-info{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
 }
+
+.record-date{
+    font-size:13px;
+    color:#999;
+}
+
+.record-category{
+    font-size:16px;
+    font-weight:bold;
+    color:#555;
+}
+
+.record-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+}
+
+.record-money{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.income-money{
+    color:#43A047;
+}
+
+.expense-money{
+    color:#EC407A;
+}
+
+.delete-btn{
+    border:none;
+    background:#FFE4EE;
+    color:#C84D84;
+    padding:6px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:12px;
+    transition:.2s;
+}
+
+.delete-btn:hover{
+    background:#FFD1E2;
+}
+
+
+
+/* ===========================
+   입력 화면
+=========================== */
 
 .form-group{
     margin-bottom:20px;
@@ -137,16 +206,26 @@ header h1{
     display:block;
     font-size:16px;
     font-weight:bold;
+    color:#D85A91;
     margin-bottom:8px;
 }
 
 .form-group input,
 .form-group select{
     width:100%;
-    padding:12px;
+    padding:13px;
     font-size:16px;
-    border:1px solid #ccc;
-    border-radius:8px;
+    border:1px solid #F4C9DA;
+    border-radius:10px;
+    outline:none;
+    transition:.2s;
+    background:#FFFDFE;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#F48FB1;
+    box-shadow:0 0 0 3px rgba(244,143,177,.18);
 }
 
 .radio-group{
@@ -160,6 +239,7 @@ header h1{
     gap:6px;
     font-weight:normal;
     margin-bottom:0;
+    color:#555;
 }
 
 .radio-group input{
@@ -172,139 +252,72 @@ header h1{
     padding:15px;
     font-size:17px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
     margin-top:12px;
+    transition:.2s;
 }
 
 #saveBtn{
-    background:#2e7d32;
+    background:#F48FB1;
     color:#fff;
+    font-weight:bold;
 }
 
 #saveBtn:hover{
-    background:#256428;
+    background:#EC6F9A;
 }
 
 #cancelBtn{
-    background:#ddd;
+    background:#F5F5F5;
+    color:#666;
 }
 
 #cancelBtn:hover{
-    background:#c7c7c7;
-}
-
-#recordList li{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 5px;
-    border-bottom:1px solid #eee;
-}
-
-.record-info{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-}
-
-.record-date{
-    font-size:13px;
-    color:#888;
-}
-
-.record-category{
-    font-size:16px;
-    font-weight:bold;
-}
-
-.record-money{
-    font-size:17px;
-    font-weight:bold;
-}
-
-.income-money{
-    color:#1976d2;
-}
-
-.expense-money{
-    color:#d32f2f;
-}
-
-.record-right{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:8px;
+    background:#E9E9E9;
 }
 
 
-.delete-btn{
-    border:none;
-    background:#eee;
-    padding:5px 10px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:12px;
-}
 
+/* ===========================
+   모바일
+=========================== */
 
-.delete-btn:hover{
-    background:#ddd;
-}
+@media (max-width:600px){
 
-/* 월 이동 영역 */
+    .container{
+        margin:15px;
+        padding:0;
+    }
 
-.month-control{
+    header h1{
+        font-size:28px;
+    }
 
-    display:flex;
+    .month-control h2{
+        font-size:19px;
+    }
 
-    flex-direction:row;
+    .summary-row{
+        font-size:17px;
+    }
 
-    justify-content:center;
+    .total{
+        font-size:20px;
+    }
 
-    align-items:center;
+    #addBtn,
+    #saveBtn,
+    #cancelBtn{
+        font-size:17px;
+    }
 
-    gap:15px;
+    .record-category{
+        font-size:15px;
+    }
 
-    margin-bottom:20px;
-
-}
-
-
-.month-control button{
-
-    width:35px;
-
-    height:35px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-shrink:0;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#f1f1f1;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-}
-
-
-.month-control h2{
-
-    margin:0;
-
-    white-space:nowrap;
-
-    font-size:20px;
+    .record-money{
+        font-size:16px;
+    }
 
 }
